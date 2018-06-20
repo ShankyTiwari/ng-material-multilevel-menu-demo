@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+.my-custom-class .amml-item{
+    border-top: solid 2px #bb00ff;
+}
+
+.my-custom-class .mat-divider{
+    border-top-style: none !important;
+}
