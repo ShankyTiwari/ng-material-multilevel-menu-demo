@@ -1,12 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
-
-.my-custom-class .amml-item{
-    border-top: solid 2px #bb00ff;
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 0;
 }
 
-.my-custom-class .mat-divider{
-    border-top-style: none !important;
+.basic-container {
+  padding: 30px;
+}
+
+.version-info {
+  font-size: 8pt;
+  float: right;
+}
+
+a {
+  color: rgba(0, 0, 0, 0.62);
+  font-weight: 600;
+}
+
+a,
+span,
+p,
+li {
+  line-height: 25px;
+}
+
+.my-custom-list .level-1 {
+  background: rgb(71, 71, 71);
+}
+
+.my-custom-list .level-1 .amml-item {
+  background: rgb(71, 71, 71) !important;
+}
+
+.my-custom-list .level-2 {
+  background: rgb(46, 46, 46) !important;
+}
+
+.my-custom-list .level-2 .amml-item {
+  background: rgb(46, 46, 46) !important;
+}
+
+.my-custom-list .level-3 {
+  background: #000 !important;
+}
+
+.my-custom-list .level-3 .amml-item {
+  background: #000 !important;
 }

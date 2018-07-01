@@ -1,1 +1,27 @@
-<ng-material-multilevel-menu [configuration]='config' [items]='appitems' (selectedItem)="selectedItem($event)"></ng-material-multilevel-menu>
+<div class="heading">
+  <h1>ng-material-multilevel-menu</h1>
+  <span class="short-desc">Material Multi-Level Menu for Angular Projects</span>
+</div>
+
+
+<div class="conatiner">
+    <div class="demo-container">
+        <h2 class="heading">Demo #1 (Default)</h2>
+        <div class="demo">
+        <ng-material-multilevel-menu [items]='appItems' (selectedItem)="selectedItem($event)"></ng-material-multilevel-menu>
+        </div>
+    </div>
+    <div class="demo-container">
+        <h2 class="heading"> Demo #2</h2>
+        <div class="demo">
+            <ng-material-multilevel-menu [configuration]='config2' [items]='appItems2' (selectedItem)="selectedItem2($event)"></ng-material-multilevel-menu>
+        </div>
+    </div>
+    <div class="demo-container">
+        <h2 class="heading"> Demo #3</h2>
+        <div class="demo">
+            <ng-material-multilevel-menu [configuration]='config3' [items]='appItems3' (selectedItem)="selectedItem3($event)"></ng-material-multilevel-menu>
+        </div>
+    </div>
+    
+</div>
