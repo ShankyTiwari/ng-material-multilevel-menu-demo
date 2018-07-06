@@ -9,6 +9,9 @@ export class AppComponent {
   selectedData = null;
   selectedData2 = null;
   selectedData3 = null;
+  remoteData = null;
+
+  appItemsjson: any[] = []
 
   appItems = [
     {
@@ -136,7 +139,6 @@ export class AppComponent {
     }
   ];
 
-
   appItems3 = [
     {
       label: 'Item 1 with Font awesome icon',
@@ -229,4 +231,22 @@ export class AppComponent {
   selectedItem3(selectedData) {
     this.selectedData3 = selectedData;
   }
+
+  constructor() {
+    fetch('/assets/menu.json')
+      .then(function (response) {
+        return response.json();
+      })
+      .then((response) => {
+        this.appItemsjson = response;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  remoteDataSelected(selectedData) {
+    this.remoteData = selectedData;
+  }
+
 }

@@ -16,11 +16,19 @@
         <div class="demo">
             <ng-material-multilevel-menu [configuration]='config2' [items]='appItems2' (selectedItem)="selectedItem2($event)"></ng-material-multilevel-menu>
         </div>
-    </div>
-    <div class="demo-container">
+    </div><div class="demo-container">
         <h2 class="heading"> Demo #3</h2>
         <div class="demo">
             <ng-material-multilevel-menu [configuration]='config3' [items]='appItems3' (selectedItem)="selectedItem3($event)"></ng-material-multilevel-menu>
+        </div>
+    </div>
+    <div class="demo-container">
+        <h2 class="heading"> Demo #4 (Working with Remote data)</h2>
+        <div class="demo">
+            <ng-material-multilevel-menu *ngIf='appItemsjson.length > 0' [configuration]='config3' [items]='appItemsjson' (selectedItem)="remoteDataSelected($event)"></ng-material-multilevel-menu>
+        </div>
+        <div *ngIf='remoteData !== null'>
+            {{remoteData|json}}
         </div>
     </div>
     
