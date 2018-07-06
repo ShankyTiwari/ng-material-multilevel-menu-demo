@@ -27,6 +27,11 @@ li {
   line-height: 25px;
 }
 
+.my-custom-class-2 .selected-amml-item {
+  background-color: #fff  !important;
+}
+
+
 .my-custom-list .level-1 {
   background: rgb(71, 71, 71);
 }

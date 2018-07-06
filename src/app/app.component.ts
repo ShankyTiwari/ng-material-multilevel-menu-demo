@@ -203,8 +203,8 @@ export class AppComponent {
   ];
 
   config2 = {
-    paddingAtStart: true,
-    classname: 'my-custom-class',
+    paddingAtStart: false,
+    classname: 'my-custom-class-2',
     listBackgroundColor: `rgb(208, 241, 239)`,
     fontColor: `rgb(8, 54, 71)`,
     backgroundColor: `rgb(208, 241, 239)`,
