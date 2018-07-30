@@ -1,252 +1,77 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
+import { Router, NavigationEnd } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   selectedData = null;
-  selectedData2 = null;
-  selectedData3 = null;
-  remoteData = null;
-
-  appItemsjson: any[] = []
+  showHome = true;
 
   appItems = [
     {
-      label: 'Item 1 (with Font awesome icon)',
-      faIcon: 'fab fa-500px',
+      label: 'Home',
+      link: '/',
+    },
+    {
+      label: 'Layout Variations',
       items: [
         {
-          label: 'Item 1.1',
-          link: '/item-1-1',
-          faIcon: 'fab fa-accusoft'
+          label: 'Default',
+          link: '/pages/layout-variations/layout-variations/demo-one',
         },
         {
-          label: 'Item 1.2',
-          faIcon: 'fab fa-accessible-icon',
-          items: [
-            {
-              label: 'Item 1.2.1',
-              link: '/item-1-2-1',
-              faIcon: 'fas fa-allergies'
-            },
-            {
-              label: 'Item 1.2.2',
-              faIcon: 'fas fa-ambulance',
-              items: [
-                {
-                  label: 'Item 1.2.2.1',
-                  link: 'item-1-2-2-1',
-                  faIcon: 'fas fa-anchor'
-                }
-              ]
-            }
-          ]
+          label: 'Work with Colours',
+          link: '/pages/layout-variations/layout-variations/demo-two'
+        },
+        {
+          label: 'Change with background',
+          link: '/pages/layout-variations/layout-variations/demo-three'
         }
       ]
     },
     {
-      label: 'Item 2',
-      icon: 'alarm',
+      label: 'Configurations',
       items: [
         {
-          label: 'Item 2.1',
-          link: '/item-2-1',
-          icon: 'favorite'
+          label: 'Add/Remove Padding',
+          link: '/pages/more-configuration/more-configuration/disable-padding',
         },
         {
-          label: 'Item 2.2',
-          link: '/item-2-2',
-          icon: 'favorite_border'
+          label: 'Enable/Disable Routing',
+          link: '/pages/more-configuration/more-configuration/disable-routing',
         }
       ]
-    },
-    {
-      label: 'Item 3',
-      link: '/item-3',
-      icon: 'offline_pin'
-    },
-    {
-      label: 'Item 4',
-      link: '/item-4',
-      icon: 'star_rate',
-      hidden: true
     }
   ];
 
-  appItems2 = [
-    {
-      label: 'Item 1 with Font awesome icon',
-      faIcon: 'fab fa-500px',
-      items: [
-        {
-          label: 'Item 1.1',
-          link: '/item-1-1',
-          faIcon: 'fab fa-accusoft'
-        },
-        {
-          label: 'Item 1.2',
-          faIcon: 'fab fa-accessible-icon',
-          items: [
-            {
-              label: 'Item 1.2.1',
-              link: '/item-1-2-1',
-              faIcon: 'fas fa-allergies'
-            },
-            {
-              label: 'Item 1.2.2',
-              faIcon: 'fas fa-ambulance',
-              items: [
-                {
-                  label: 'Item 1.2.2.1',
-                  link: 'item-1-2-2-1',
-                  faIcon: 'fas fa-anchor'
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      label: 'Item 2',
-      icon: 'alarm',
-      items: [
-        {
-          label: 'Item 2.1',
-          link: '/item-2-1',
-          icon: 'favorite'
-        },
-        {
-          label: 'Item 2.2',
-          link: '/item-2-2',
-          icon: 'favorite_border'
-        }
-      ]
-    },
-    {
-      label: 'Item 3',
-      link: '/item-3',
-      icon: 'offline_pin'
-    },
-    {
-      label: 'Item 4',
-      link: '/item-4',
-      icon: 'star_rate',
-      hidden: true
-    }
-  ];
-
-  appItems3 = [
-    {
-      label: 'Item 1 with Font awesome icon',
-      faIcon: 'fab fa-500px',
-      items: [
-        {
-          label: 'Item 1.1',
-          link: '/item-1-1',
-          faIcon: 'fab fa-accusoft'
-        },
-        {
-          label: 'Item 1.2',
-          faIcon: 'fab fa-accessible-icon',
-          items: [
-            {
-              label: 'Item 1.2.1',
-              link: '/item-1-2-1',
-              faIcon: 'fas fa-allergies'
-            },
-            {
-              label: 'Item 1.2.2',
-              faIcon: 'fas fa-ambulance',
-              items: [
-                {
-                  label: 'Item 1.2.2.1',
-                  link: 'item-1-2-2-1',
-                  faIcon: 'fas fa-anchor'
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      label: 'Item 2',
-      icon: 'alarm',
-      items: [
-        {
-          label: 'Item 2.1',
-          link: '/item-2-1',
-          icon: 'favorite'
-        },
-        {
-          label: 'Item 2.2',
-          link: '/item-2-2',
-          icon: 'favorite_border'
-        }
-      ]
-    },
-    {
-      label: 'Item 3',
-      link: '/item-3',
-      icon: 'offline_pin'
-    },
-    {
-      label: 'Item 4',
-      link: '/item-4',
-      icon: 'star_rate',
-      hidden: true
-    }
-  ];
-
-  config2 = {
+  config = {
     paddingAtStart: false,
-    classname: 'my-custom-class-2',
-    listBackgroundColor: `rgb(208, 241, 239)`,
-    fontColor: `rgb(8, 54, 71)`,
-    backgroundColor: `rgb(208, 241, 239)`,
-    selectedListFontColor: `red`,
-  };
-
-  config3 = {
-    paddingAtStart: false,
-    classname: 'my-custom-list',
-    listBackgroundColor: `rgb(120, 120, 120)`,
-    fontColor: `#a5a5a5`,
-    backgroundColor: `rgb(120, 120, 120)`,
-    selectedListFontColor: `#fff`,
+    interfaceWithRoute: true
   };
 
   selectedItem(selectedData) {
+    console.log(selectedData);
     this.selectedData = selectedData;
   }
 
-  selectedItem2(selectedData) {
-    this.selectedData2 = selectedData;
-  }
+  constructor(
+    private router: Router
+  ) { }
 
-  selectedItem3(selectedData) {
-    this.selectedData3 = selectedData;
-  }
-
-  constructor() {
-    fetch('/assets/menu.json')
-      .then(function (response) {
-        return response.json();
-      })
-      .then((response) => {
-        this.appItemsjson = response;
-      })
-      .catch((error) => {
-        console.log(error);
+  ngOnInit() {
+    this.router.events
+      .subscribe((event) => {
+        if (event instanceof NavigationEnd) {
+          if (event.url === '/') {
+            this.showHome = true;
+          } else {
+            this.showHome = false;
+          }
+        }
       });
-  }
-
-  remoteDataSelected(selectedData) {
-    this.remoteData = selectedData;
   }
 
 }
