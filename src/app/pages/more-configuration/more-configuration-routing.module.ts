@@ -4,23 +4,26 @@ import { Routes, RouterModule } from '@angular/router';
 import { MoreConfigurationComponent } from './more-configuration.component';
 
 const routes: Routes = [{
-  path: 'more-configuration',
+  path: '',
   component: MoreConfigurationComponent,
   children: [
     {
       path: 'disable-padding',
-      loadChildren: 'src/app/pages/more-configuration/disable-padding/disable-padding.module#DisablePaddingModule'
+      loadChildren: './disable-padding/disable-padding.module#DisablePaddingModule'
     },
     {
       path: 'disable-routing',
-      loadChildren: 'src/app/pages/more-configuration/disable-routing/disable-routing.module#DisableRoutingModule'
+      loadChildren: './disable-routing/disable-routing.module#DisableRoutingModule'
+    },
+    {
+      path: '**',
+      redirectTo: 'demo-one',
     }
   ]
 }, {
-    path: '',
-    redirectTo: 'more-configuration',
-    pathMatch: 'full'
-  }];
+  path: '**',
+  redirectTo: '',
+}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

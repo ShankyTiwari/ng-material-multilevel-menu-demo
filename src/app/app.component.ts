@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Router, NavigationEnd } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,22 +11,22 @@ export class AppComponent implements OnInit {
   appItems = [
     {
       label: 'Home',
-      link: '/',
+      link: '/pages/home',
     },
     {
       label: 'Layout Variations',
       items: [
         {
           label: 'Default',
-          link: '/pages/layout-variations/layout-variations/demo-one',
+          link: '/pages/layout-variations/demo-one',
         },
         {
           label: 'Work with Colours',
-          link: '/pages/layout-variations/layout-variations/demo-two'
+          link: '/pages/layout-variations/demo-two'
         },
         {
           label: 'Change with background',
-          link: '/pages/layout-variations/layout-variations/demo-three'
+          link: '/pages/layout-variations/demo-three'
         }
       ]
     },
@@ -37,11 +35,11 @@ export class AppComponent implements OnInit {
       items: [
         {
           label: 'Add/Remove Padding',
-          link: '/pages/more-configuration/more-configuration/disable-padding',
+          link: '/pages/more-configuration/disable-padding',
         },
         {
           label: 'Enable/Disable Routing',
-          link: '/pages/more-configuration/more-configuration/disable-routing',
+          link: '/pages/more-configuration/disable-routing',
         }
       ]
     }
@@ -57,21 +55,7 @@ export class AppComponent implements OnInit {
     this.selectedData = selectedData;
   }
 
-  constructor(
-    private router: Router
-  ) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.router.events
-      .subscribe((event) => {
-        if (event instanceof NavigationEnd) {
-          if (event.url === '/') {
-            this.showHome = true;
-          } else {
-            this.showHome = false;
-          }
-        }
-      });
-  }
-
+  ngOnInit() {}
 }
