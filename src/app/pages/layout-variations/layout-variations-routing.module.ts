@@ -4,19 +4,20 @@ import { Routes, RouterModule } from '@angular/router';
 import { LayoutVariationsComponent } from './layout-variations.component';
 
 const routes: Routes = [{
-  path: 'layout-variations',
+  path: '',
   component: LayoutVariationsComponent,
   children: [
     {
       path: 'demo-one',
-      loadChildren: 'src/app/pages/layout-variations/demo-one/demo-one.module#DemoOneModule'
+      loadChildren: './demo-one/demo-one.module#DemoOneModule'
     },
     {
       path: 'demo-two',
-      loadChildren: 'src/app/pages/layout-variations/demo-two/demo-two.module#DemoTwoModule'
+      loadChildren: './demo-two/demo-two.module#DemoTwoModule'
     },
     {
       path: 'demo-three',
+<<<<<<< HEAD
       loadChildren: 'src/app/pages/layout-variations/demo-three/demo-three.module#DemoThreeModule'
     },
     {
@@ -26,13 +27,19 @@ const routes: Routes = [{
     {
       path: 'demo-five',
       loadChildren: 'src/app/pages/layout-variations/demo-five/demo-five.module#DemoFiveModule'
+=======
+      loadChildren: './demo-three/demo-three.module#DemoThreeModule'
+    },
+    {
+      path: '**',
+      redirectTo: 'demo-one',
+>>>>>>> d79afb5dd0fe89e16593fe93428482a344140871
     }
   ]
 }, {
-    path: '',
-    redirectTo: 'layout-variations/layout-variations/demo-one',
-    pathMatch: 'full'
-  }];
+  path: '**',
+  redirectTo: '',
+}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

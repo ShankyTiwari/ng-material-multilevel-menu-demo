@@ -4,20 +4,30 @@ import { Routes, RouterModule } from '@angular/router';
 import { PagesComponent } from './pages.component';
 
 const routes: Routes = [{
-    path: 'pages',
-    component: PagesComponent,
-    children: [
-      {
-        path: 'layout-variations',
-        loadChildren: 'src/app/pages/layout-variations/layout-variations.module#LayoutVariationsModule'
-      },
-      {
-        path: 'more-configuration',
-        loadChildren: 'src/app/pages/more-configuration/more-configuration.module#MoreConfigurationModule'
-      }
-    ]
-  }
-];
+  path: '',
+  component: PagesComponent,
+  children: [{
+      path: '',
+      redirectTo: 'home',
+      pathMatch: 'full',
+    },
+    {
+      path: 'home',
+      loadChildren: './home/home.module#HomeModule',
+    },
+    {
+      path: 'layout-variations',
+      loadChildren: './layout-variations/layout-variations.module#LayoutVariationsModule'
+    },
+    {
+      path: 'more-configuration',
+      loadChildren: './more-configuration/more-configuration.module#MoreConfigurationModule'
+    },
+    {
+      path: '**',
+      redirectTo: 'home'
+    }]
+}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
