@@ -25,21 +25,16 @@ export class AppComponent implements OnInit {
           link: '/pages/layout-variations/demo-two'
         },
         {
-<<<<<<< HEAD
           label: 'Change background',
-          link: '/pages/layout-variations/layout-variations/demo-three'
+          link: '/pages/layout-variations/demo-three'
         },
         {
           label: 'Use Images in the list',
-          link: '/pages/layout-variations/layout-variations/demo-four'
+          link: '/pages/layout-variations/demo-four'
         },
         {
           label: 'RLT Demo',
-          link: '/pages/layout-variations/layout-variations/demo-five'
-=======
-          label: 'Change with background',
-          link: '/pages/layout-variations/demo-three'
->>>>>>> d79afb5dd0fe89e16593fe93428482a344140871
+          link: '/pages/layout-variations/demo-five'
         }
       ]
     },
