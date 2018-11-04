@@ -27,8 +27,16 @@ export class AppComponent implements OnInit {
           link: '/pages/layout-variations/layout-variations/demo-two'
         },
         {
-          label: 'Change with background',
+          label: 'Change background',
           link: '/pages/layout-variations/layout-variations/demo-three'
+        },
+        {
+          label: 'Use Images in the list',
+          link: '/pages/layout-variations/layout-variations/demo-four'
+        },
+        {
+          label: 'RLT Demo',
+          link: '/pages/layout-variations/layout-variations/demo-five'
         }
       ]
     },
@@ -48,8 +56,10 @@ export class AppComponent implements OnInit {
   ];
 
   config = {
-    paddingAtStart: false,
-    interfaceWithRoute: true
+    paddingAtStart: true,
+    interfaceWithRoute: true,
+    collapseOnSelect: true,
+    highlightOnSelect: true
   };
 
   selectedItem(selectedData) {

@@ -76,6 +76,6 @@ export const constant = {
     ],
     sidebarConfigurations: {
         paddingAtStart: false,
-        interfaceWithRoute: true
+        interfaceWithRoute: true,
     }
 };

@@ -18,6 +18,14 @@ const routes: Routes = [{
     {
       path: 'demo-three',
       loadChildren: 'src/app/pages/layout-variations/demo-three/demo-three.module#DemoThreeModule'
+    },
+    {
+      path: 'demo-four',
+      loadChildren: 'src/app/pages/layout-variations/demo-four/demo-four.module#DemoFourModule'
+    },
+    {
+      path: 'demo-five',
+      loadChildren: 'src/app/pages/layout-variations/demo-five/demo-five.module#DemoFiveModule'
     }
   ]
 }, {
