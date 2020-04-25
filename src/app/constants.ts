@@ -2,7 +2,7 @@ export const constant = {
     sidebarDemoLinks: [
         {
             label: 'Home',
-            link: '/',
+            link: '/pages/home',
             icon: 'favorite'
         },
         {
