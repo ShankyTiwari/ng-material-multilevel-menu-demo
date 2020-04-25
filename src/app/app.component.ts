@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements OnInit {
   selectedData = null;
@@ -10,54 +10,54 @@ export class AppComponent implements OnInit {
 
   appItems = [
     {
-      label: 'Home',
-      link: '/pages/home',
+      label: "Home",
+      link: "/pages/home",
     },
     {
-      label: 'Layout Variations',
+      label: "Layout Variations",
       items: [
         {
-          label: 'Default',
-          link: '/pages/layout-variations/demo-one',
+          label: "Default",
+          link: "/pages/layout-variations/demo-one",
         },
         {
-          label: 'Work with Colours',
-          link: '/pages/layout-variations/demo-two'
+          label: "Work with Colours",
+          link: "/pages/layout-variations/demo-two",
         },
         {
-          label: 'Change background',
-          link: '/pages/layout-variations/demo-three'
+          label: "Change background",
+          link: "/pages/layout-variations/demo-three",
         },
         {
-          label: 'Use Images in the list',
-          link: '/pages/layout-variations/demo-four'
+          label: "Use Images in the list",
+          link: "/pages/layout-variations/demo-four",
         },
         {
-          label: 'RLT Demo',
-          link: '/pages/layout-variations/demo-five'
-        }
-      ]
+          label: "RLT Demo",
+          link: "/pages/layout-variations/demo-five",
+        },
+      ],
     },
     {
-      label: 'Configurations',
+      label: "Configurations",
       items: [
         {
-          label: 'Add/Remove Padding',
-          link: '/pages/more-configuration/disable-padding',
+          label: "Add/Remove Padding",
+          link: "/pages/more-configuration/disable-padding",
         },
         {
-          label: 'Enable/Disable Routing',
-          link: '/pages/more-configuration/disable-routing',
-        }
-      ]
-    }
+          label: "Enable/Disable Routing",
+          link: "/pages/more-configuration/disable-routing",
+        },
+      ],
+    },
   ];
 
   config = {
     paddingAtStart: true,
     interfaceWithRoute: true,
     collapseOnSelect: true,
-    highlightOnSelect: true
+    highlightOnSelect: true,
   };
 
   selectedItem(selectedData) {
@@ -65,7 +65,11 @@ export class AppComponent implements OnInit {
     this.selectedData = selectedData;
   }
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
+
+  redirect(path) {
+    window.location.href = path;
+  }
 }
