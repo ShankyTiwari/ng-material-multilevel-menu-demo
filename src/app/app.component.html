@@ -1,6 +1,10 @@
 <div class="container">
     <div class="menu">
-        <ng-material-multilevel-menu [configuration]='config' [items]='appItems' (selectedItem)="selectedItem($event)"></ng-material-multilevel-menu>
+        <ng-material-multilevel-menu 
+          [configuration]='config' 
+          [items]='appItems'
+          (selectedItem)="selectedItem($event)">
+        </ng-material-multilevel-menu>
     </div>
     <div class="demos">
         <div class="heading">

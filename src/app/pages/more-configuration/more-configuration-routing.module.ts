@@ -16,6 +16,10 @@ const routes: Routes = [{
       loadChildren: './disable-routing/disable-routing.module#DisableRoutingModule'
     },
     {
+      path: 'expand-collapse',
+      loadChildren: './expand-collapse/expand-collapse.module#ExpandCollapseModule'
+    },
+    {
       path: '**',
       redirectTo: 'demo-one',
     }
