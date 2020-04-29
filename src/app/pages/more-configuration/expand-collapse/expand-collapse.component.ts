@@ -69,4 +69,8 @@ export class ExpandCollapseComponent implements OnInit {
   setExpandCollapseStatus(type) {
     this.expandCollapseStatus = type;
   }
+
+  selectedItem(menu) {
+    console.log(menu);
+  }
 }
