@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { LayoutVariationsComponent } from './layout-variations.component';
 
@@ -6,7 +6,7 @@ describe('LayoutVariationsComponent', () => {
   let component: LayoutVariationsComponent;
   let fixture: ComponentFixture<LayoutVariationsComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ LayoutVariationsComponent ]
     })
