@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MultilevelMenuService, MultilevelNodes } from 'ng-material-multilevel-menu';
+
 @Component({
   selector: "app-expand-collapse",
   templateUrl: "./expand-collapse.component.html",
   styleUrls: ["./expand-collapse.component.css"],
 })
 export class ExpandCollapseComponent implements OnInit {
-  expandCollapseStatus = null;
-  appitems = [
+  appitems: MultilevelNodes[] = [
     {
       label: "Item 1 (with Font awesome icon)",
       faIcon: "fab fa-500px",
@@ -62,12 +63,14 @@ export class ExpandCollapseComponent implements OnInit {
       hidden: true,
     },
   ];
-  constructor() {}
+  constructor(
+    private multilevelMenuService: MultilevelMenuService,
+  ) {}
 
   ngOnInit(): void {}
 
   setExpandCollapseStatus(type) {
-    this.expandCollapseStatus = type;
+    this.multilevelMenuService.setMenuExapandCollpaseStatus(type);
   }
 
   selectedItem(menu) {

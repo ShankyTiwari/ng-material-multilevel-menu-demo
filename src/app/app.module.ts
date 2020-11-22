@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialsModule } from './modules/materials.module';
-import { NgMaterialMultilevelMenuModule } from 'ng-material-multilevel-menu';
+import { NgMaterialMultilevelMenuModule, MultilevelMenuService } from 'ng-material-multilevel-menu';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -20,7 +20,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     MaterialsModule
   ],
-  providers: [],
+  providers: [MultilevelMenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
