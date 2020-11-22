@@ -23,7 +23,7 @@
     "@angular/platform-browser-dynamic": "^11.0.0",
     "@angular/router": "^11.0.0",
     "core-js": "^3.6.5",
-    "ng-material-multilevel-menu": "^4.12.2",
+    "ng-material-multilevel-menu": "^5.0.1",
     "rxjs": "^6.6.3",
     "zone.js": "^0.10.3"
   },
