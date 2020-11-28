@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialsModule } from './modules/materials.module';
-import { NgMaterialMultilevelMenuModule, MultilevelMenuService } from 'ng-material-multilevel-menu';
-
 import { AppRoutingModule } from './app-routing.module';
+
+import { NgMaterialMultilevelMenuModule, MultilevelMenuService } from 'ng-material-multilevel-menu';
 
 import { AppComponent } from './app.component';
 

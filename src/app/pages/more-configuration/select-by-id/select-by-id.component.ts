@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MultilevelMenuService, MultilevelNodes, Configuration } from 'ng-material-multilevel-menu';
+
 @Component({
-  selector: 'app-demo-three',
-  templateUrl: './demo-three.component.html',
-  styleUrls: ['./demo-three.component.css']
+  selector: 'app-select-by-id',
+  templateUrl: './select-by-id.component.html',
+  styleUrls: ['./select-by-id.component.css']
 })
-export class DemoThreeComponent implements OnInit {
-  appitems = [
+export class SelectByIdComponent implements OnInit {
+  appitems: MultilevelNodes[] = [
     {
       label: 'Item 1 (with Font awesome icon)',
       faIcon: 'fab fa-500px',
@@ -62,22 +64,34 @@ export class DemoThreeComponent implements OnInit {
     }
   ];
 
-  config = {
-    paddingAtStart: false,
-    classname: 'my-custom-list',
-    listBackgroundColor: `rgb(2, 4, 76)`,
-    fontColor: `#a5a5a5`,
-    backgroundColor: `rgb(2, 4, 76)`,
-    selectedListFontColor: `#fff`,
+  config: Configuration = {
+    paddingAtStart: true,
+    classname: 'my-custom-class',
+    listBackgroundColor: `rgb(208, 241, 239)`,
+    fontColor: `rgb(8, 54, 71)`,
+    backgroundColor: `rgb(208, 241, 239)`,
+    selectedListFontColor: `red`,
   };
 
-  constructor() { }
+  menuId: string = null;
 
-  ngOnInit() {
+  constructor(
+      private multilevelMenuService: MultilevelMenuService
+  ) {}
+
+  selectMenuID(){
+    if(this.menuId ===  null) {
+      alert("Menu ID can't be empty");
+      return;
+    }
+    this.multilevelMenuService.selectMenuByID(this.menuId);
   }
 
-  selectedItem($event) {
-    console.log($event);
+  selectedItem(event: MultilevelNodes) {
+    console.log(event)
+  }
+
+  ngOnInit(): void {
   }
 
 }

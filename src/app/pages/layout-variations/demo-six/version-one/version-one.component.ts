@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MultilevelNodes, Configuration, ExpandedRTL, ExpandedLTR } from 'ng-material-multilevel-menu';
+
 @Component({
-  selector: 'app-demo-three',
-  templateUrl: './demo-three.component.html',
-  styleUrls: ['./demo-three.component.css']
+  selector: 'app-version-one',
+  templateUrl: './version-one.component.html',
+  styleUrls: ['./version-one.component.css'],
+  animations: [ExpandedRTL, ExpandedLTR]
 })
-export class DemoThreeComponent implements OnInit {
-  appitems = [
+export class VersionOneComponent implements OnInit {
+  appitems: MultilevelNodes[] = [
     {
       label: 'Item 1 (with Font awesome icon)',
       faIcon: 'fab fa-500px',
@@ -21,7 +24,7 @@ export class DemoThreeComponent implements OnInit {
           items: [
             {
               label: 'Item 1.2.1',
-              faIcon: 'fas fa-allergies'
+              faIcon: 'fas fa-ambulance',
             },
             {
               label: 'Item 1.2.2',
@@ -39,41 +42,39 @@ export class DemoThreeComponent implements OnInit {
     },
     {
       label: 'Item 2',
-      icon: 'alarm',
+      faIcon: 'fas fa-ambulance',
       items: [
         {
           label: 'Item 2.1',
-          icon: 'favorite'
+          faIcon: 'fab fa-accusoft',
         },
         {
           label: 'Item 2.2',
-          icon: 'favorite_border'
+          faIcon: 'fab fa-500px',
         }
       ]
     },
     {
       label: 'Item 3',
-      icon: 'offline_pin'
-    },
-    {
-      label: 'Item 4',
-      icon: 'star_rate',
-      hidden: true
+      faIcon: 'fas fa-anchor',
     }
   ];
 
-  config = {
+  config: Configuration = {
     paddingAtStart: false,
-    classname: 'my-custom-list',
-    listBackgroundColor: `rgb(2, 4, 76)`,
-    fontColor: `#a5a5a5`,
-    backgroundColor: `rgb(2, 4, 76)`,
-    selectedListFontColor: `#fff`,
-  };
+    rtlLayout: true,
+    customTemplate: true,
+  }
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+  }
+
+  getClass(item) {
+    return {
+      [item.faIcon]: true
+    }
   }
 
   selectedItem($event) {

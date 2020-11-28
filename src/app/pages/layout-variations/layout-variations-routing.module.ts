@@ -9,23 +9,27 @@ const routes: Routes = [{
   children: [
     {
       path: 'demo-one',
-      loadChildren: './demo-one/demo-one.module#DemoOneModule'
+      loadChildren: () => import("./demo-one/demo-one.module").then((m) => m.DemoOneModule),
     },
     {
       path: 'demo-two',
-      loadChildren: './demo-two/demo-two.module#DemoTwoModule'
+      loadChildren: () => import("./demo-two/demo-two.module").then((m) => m.DemoTwoModule),
     },
     {
       path: 'demo-three',
-      loadChildren: './demo-three/demo-three.module#DemoThreeModule'
+      loadChildren: () => import("./demo-three/demo-three.module").then((m) => m.DemoThreeModule),
     },
     {
       path: 'demo-four',
-      loadChildren: './demo-four/demo-four.module#DemoFourModule'
+      loadChildren: () => import("./demo-four/demo-four.module").then((m) => m.DemoFourModule),
     },
     {
       path: 'demo-five',
-      loadChildren: './demo-five/demo-five.module#DemoFiveModule'
+      loadChildren: () => import("./demo-five/demo-five.module").then((m) => m.DemoFiveModule),
+    },
+    {
+      path: 'demo-six',
+      loadChildren: () => import("./demo-six/demo-six.module").then((m) => m.DemoSixModule),
     }
   ]
 }, {

@@ -9,15 +9,23 @@ const routes: Routes = [{
   children: [
     {
       path: 'disable-padding',
-      loadChildren: './disable-padding/disable-padding.module#DisablePaddingModule'
+      loadChildren: () => import("./disable-padding/disable-padding.module").then((m) => m.DisablePaddingModule),
     },
     {
       path: 'disable-routing',
-      loadChildren: './disable-routing/disable-routing.module#DisableRoutingModule'
+      loadChildren: () => import("./disable-routing/disable-routing.module").then((m) => m.DisableRoutingModule),
     },
     {
       path: 'expand-collapse',
-      loadChildren: './expand-collapse/expand-collapse.module#ExpandCollapseModule'
+      loadChildren: () => import("./expand-collapse/expand-collapse.module").then((m) => m.ExpandCollapseModule),
+    },
+    {
+      path: 'dont-emit',
+      loadChildren: () => import("./dont-emit/dont-emit.module").then((m) => m.DontEmitModule),
+    },
+    {
+      path: 'select-by-id',
+      loadChildren: () => import("./select-by-id/select-by-id.module").then((m) => m.SelectByIdModule),
     },
     {
       path: '**',

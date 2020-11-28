@@ -7,7 +7,7 @@ const routes: Routes = [{
   pathMatch: 'full',
 }, {
   path: 'pages',
-  loadChildren: './pages/pages.module#PagesModule',
+  loadChildren: () => import("./pages/pages.module").then((m) => m.PagesModule),
 }, {
   path: '**',
   redirectTo: '/pages/home',

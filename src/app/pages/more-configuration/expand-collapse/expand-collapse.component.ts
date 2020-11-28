@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MultilevelMenuService, MultilevelNodes } from 'ng-material-multilevel-menu';
+import { MultilevelNodes, MultilevelMenuService } from 'ng-material-multilevel-menu';
 
 @Component({
   selector: "app-expand-collapse",

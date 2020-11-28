@@ -13,15 +13,15 @@ const routes: Routes = [{
     },
     {
       path: 'home',
-      loadChildren: './home/home.module#HomeModule',
+      loadChildren: () => import("./home/home.module").then((m) => m.HomeModule),
     },
     {
       path: 'layout-variations',
-      loadChildren: './layout-variations/layout-variations.module#LayoutVariationsModule'
+      loadChildren: () => import("./layout-variations/layout-variations.module").then((m) => m.LayoutVariationsModule),
     },
     {
       path: 'more-configuration',
-      loadChildren: './more-configuration/more-configuration.module#MoreConfigurationModule'
+      loadChildren: () => import("./more-configuration/more-configuration.module").then((m) => m.MoreConfigurationModule),
     },
     {
       path: '**',
